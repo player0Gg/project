@@ -5,8 +5,8 @@ from db import Base
 class News(Base):
     __tablename__ = 'news'
     id=Column(Integer, primary_key=True, index=True)
-    image=Column(String)
-    create_at=Column(DateTime)
-    title=Column(String)
-    description=Column(Text)
-    text=Column(Text)    
+    image=Column(String,nullable=True)
+    create_at=Column(DateTime,nullable=False)
+    title=Column(String,nullable=False)
+    description=Column(Text,nullable=False)
+    text=Column(Text,nullable=False)    

@@ -8,8 +8,11 @@ from router.manag import manag_router
 from router.ceremony import ceremony_router
 from router.tenders import tenders_router 
 from router.events import events_router
+from db import engine, Base
 
 app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
 
 app.include_router(users_router)
 app.include_router(documents_router)

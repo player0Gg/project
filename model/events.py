@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, Text, DateTime
 from db import Base
 
 class Event(Base):
     __tablename__ = 'events'
 
     id=Column(Integer, primary_key=True, index=True)
-    title=Column(String)
-    text=Column(String)
-    date=Column(DateTime)
+    title=Column(Text,nullable=False)
+    text=Column(Text,nullable=False)
+    date=Column(DateTime,nullable=False)
